@@ -19,6 +19,7 @@ function Home() {
  const navItems = [
     
     {
+      link:"/default",
       name: "Cabs",
       icon: <Car size={18} />,
       image:
@@ -26,6 +27,7 @@ function Home() {
       desc: "Book nearby rides quickly with trusted drivers and clean vehicles.",
     },
     {
+      link:"/default",
       name: "Hotels",
       icon: <Hotel size={18} />,
       image:
@@ -33,20 +35,24 @@ function Home() {
       desc: "Find and book your perfect stay at luxury and budget hotels.",
     },
     {
-      name: "Portals",
+      link:"/admin",
+      name: "Admin Portals",
       icon: <Globe size={18} />,
       image:
         "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60",
       desc: "Access all travel tools, updates, and online services in one place.",
     },
     {
+      link:"/default",
       name: "Voice Assistance",
       icon: <Mic size={18} />,
       image:
         "https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?auto=format&fit=crop&w=900&q=60",
       desc: "Use AI-powered voice commands to plan and manage your trips easily.",
+
     },
     {
+      link:"/default",
       name: "Trains",
       icon: <Train size={18} />,
       image:
@@ -54,12 +60,30 @@ function Home() {
       desc: "Search, plan, and book your train journeys with live schedule updates.",
     },
     {
+      link:"/default",
       name: "Buses",
       icon: <Bus size={18} />,
       image:
         "https://images.unsplash.com/photo-1517949908114-720226b864c1?auto=format&fit=crop&w=900&q=60",
       desc: "Book intercity and local buses at affordable prices and comfort.",
     },
+    // {
+    //   link:"/login",
+    //   name: "login",
+    //   icon: <Bus size={18} />,
+    //   image:
+    //     "https://images.unsplash.com/photo-1517949908114-720226b864c1?auto=format&fit=crop&w=900&q=60",
+    //   desc: "Book intercity and local buses at affordable prices and comfort.",
+    // },
+    // {
+    //   link:"/signup",
+    //   name: "Signup",
+    //   icon: <Bus size={18} />,
+    //   image:
+    //     "https://images.unsplash.com/photo-1517949908114-720226b864c1?auto=format&fit=crop&w=900&q=60",
+    //   desc: "Book intercity and local buses at affordable prices and comfort.",
+    // },
+    
   ];
 
   return (
@@ -74,7 +98,7 @@ function Home() {
             {navItems.map((item) => (
               <li key={item.name}>
                 <a
-                  href="#"
+                  href={item.link}
                   className="flex items-center space-x-2 hover:text-yellow-300 transition"
                 >
                   {item.icon}
@@ -139,6 +163,7 @@ function Home() {
             <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
               <div className="mb-2">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+              <link rel="stylesheet" href={item.link} />
               <p className="text-sm px-3">{item.desc}</p>
             </div>
           </div>
